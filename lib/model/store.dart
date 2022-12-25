@@ -6,7 +6,7 @@ class Store {
   num lat;
   num lng;
   String stockAt;
-  String remainStart;
+  String remainStat;
   String createdAt;
 
   Store(
@@ -17,7 +17,7 @@ class Store {
         this.lat,
         this.lng,
         this.stockAt,
-        this.remainStart,
+        this.remainStat,
         this.createdAt});
 
   Store.fromJson(Map<String, dynamic> json) {
@@ -28,7 +28,7 @@ class Store {
     lat = json['lat'];
     lng = json['lng'];
     stockAt = json['stock_at'];
-    remainStart = json['remain_start'];
+    remainStat = json['remain_stat'];
     createdAt = json['created_at'];
   }
 
@@ -41,7 +41,7 @@ class Store {
     data['lat'] = this.lat;
     data['lng'] = this.lng;
     data['stock_at'] = this.stockAt;
-    data['remain_start'] = this.remainStart;
+    data['remain_stat'] = this.remainStat;
     data['created_at'] = this.createdAt;
     return data;
   }

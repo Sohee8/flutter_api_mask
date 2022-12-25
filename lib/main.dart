@@ -1,24 +1,24 @@
+import 'package:api_mask/ui/page/main_page.dart';
+import 'package:api_mask/viewmodel/store_model.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-void main() {
-  runApp(
-      Material(
-              child: MyApp()
-      )
-  );
-}
+void main() => runApp(
+    ChangeNotifierProvider.value(
+    value: StoreModel(),
+    child: MyApp(),
+  ));
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Center(
-        child: Text('hi'),
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
-
+      home: MainPage(),
     );
   }
 }
